@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+    margin: 5px;
+    padding: 2px;
+} 
+
+.container {
+    margin-bottom: 55px;
+}
+
+body {
+    background-color: #E6E6FA;
+}
+
+#image_pos {
+	float: right;
+	height: 200px;
+	width: 200px;
+	padding: 15px;
+	margin-bottom: 50px;
+}

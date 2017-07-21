@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>The Hangman Game</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<!-- <body style="background-color:#E6E6FA"> -->
+<body>
+
+  <p id="game"><h2>The Hangman Game: Press any key to start.</h2></p>
+  <p id="answer"></p>
+  <p id="message"></p>
+  <p id="guess"></p>
+  <p id="guessList"></p>
+  <p id="win"></p>
+
+  
+<div class="container">
+  <!-- <p><img id="image_pos" src="assets/images/Hangman_Image2.jpg"> </p> -->
+  <iframe src="https://giphy.com/embed/6jZCs0TO2gg2A" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/morning-glory-6jZCs0TO2gg2A"></a></p>
+
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  
+  <script>
+
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var words = ["javascript", "coding", "hangman", "games", "testing", "element", "paper", "jquery", "tired", "sleepy", "purple", "newspaper"];
+  var word = "";  // random word chosen by the computer
+  var guessArray = []; // Keep track of the correct letters in the word
+  var winCount = 0; // Number of wins
+  var guessesLeft = 20; // Number of guesses left
+  var guessesList = []; // list of letters already guessed
+  
+
+/* Check if user input is correct */
+    
+    // Whenever a key is pressed, do the following actions.
+
+    getRandomWord(); // Get random word and initial arrays
+
+    // Set Wins counter
+    document.getElementById("win").innerHTML= "<h3>" + "Wins: " + winCount + "</h3>";
+    
+    document.onkeyup = function(event) {
+
+        var userInput = event.key;
+
+        console.log("UserInput: " + userInput);
+
+        if (alphabet.indexOf(userInput) === -1) {
+            alert("Wrong input. Please try again.");
+            console.log("Wrong input. Please try again.");
+            } else { // update the guessed letters list 
+                // add to list of guesses so far
+                guessesList.push(userInput);
+                document.getElementById("guessList").innerHTML= "<h3>" + "Letters already guessed: " + guessesList.join(" ") + "</h3>";
+    
+                // Check user input for a match
+                checkGuess(userInput); 
+            } //else
+
+    } // document.onkeyup
+  
+ 
+  </script>
+
+</div>
+
+</body>
+
+</html>
