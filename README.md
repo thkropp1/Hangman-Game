@@ -1,2 +1,2 @@
 # Hangman-Game
-The Hangman game app will run in the browser and feature dynamically updated HTML, powered by JavaScript code.
+The Hangman game app runs in the browser and features dynamically updated HTML, powered by JavaScript code.
